@@ -44,7 +44,6 @@ SteamCommunity.prototype._modernLogin = function(logOnDetails) {
 				? EAuthTokenPlatformType.WebBrowser
 				: EAuthTokenPlatformType.MobileApp,
 			{
-				localAddress: this._options.localAddress,
 				userAgent: this._options.userAgent || chrome(),
 				httpProxy: this._options.proxy
 			}
