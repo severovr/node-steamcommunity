@@ -40,9 +40,7 @@ SteamCommunity.prototype._modernLogin = function(logOnDetails) {
 		const {LoginSession, EAuthTokenPlatformType, EAuthSessionGuardType} = require('steam-session');
 
 		let session = new LoginSession(
-			logOnDetails.disableMobile
-				? EAuthTokenPlatformType.WebBrowser
-				: EAuthTokenPlatformType.MobileApp,
+			EAuthTokenPlatformType.SteamClient,
 			{
 				userAgent: this._options.userAgent || chrome(),
 				httpProxy: this._options.proxy
