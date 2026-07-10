@@ -1,4 +1,4 @@
-const request = require('postman-request');
+const request = require('request');
 const SteamID = require('steamid');
 const xml2js  = require('xml2js');
 

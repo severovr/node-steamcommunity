@@ -1,5 +1,5 @@
 const {chrome} = require('@doctormckay/user-agents');
-const Request = require('postman-request');
+const Request = require('request');
 const SteamID = require('steamid');
 
 const Helpers = require('./components/helpers.js');
@@ -27,7 +27,6 @@ function SteamCommunity(options) {
 		"jar": this._jar,
 		"timeout": options.timeout || 50000,
 		"gzip": true,
-		"brotli": true,
 		"headers": {
 			"User-Agent": options.userAgent || chrome()
 		}
