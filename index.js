@@ -2,6 +2,8 @@ const {chrome} = require('@doctormckay/user-agents');
 const Request = require('request');
 const SteamID = require('steamid');
 
+require('./components/brotli.js'); // teaches request to decompress Content-Encoding: br
+
 const Helpers = require('./components/helpers.js');
 
 require('util').inherits(SteamCommunity, require('events').EventEmitter);
@@ -28,7 +30,8 @@ function SteamCommunity(options) {
 		"timeout": options.timeout || 50000,
 		"gzip": true,
 		"headers": {
-			"User-Agent": options.userAgent || chrome()
+			"User-Agent": options.userAgent || chrome(),
+			"Accept-Encoding": "gzip, deflate, br"
 		}
 	};
 
