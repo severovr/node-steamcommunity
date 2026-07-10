@@ -261,7 +261,23 @@ function request(community, url, key, time, tag, params, json, callback) {
 	var req = {
 		method: url == 'multiajaxop' ? 'POST' : 'GET',
 		uri: 'https://steamcommunity.com/mobileconf/' + url,
-		json: !!json
+		json: !!json,
+		headers: {
+			accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+			'accept-language': 'en-US,en;q=0.9',
+			'cache-control': 'no-cache',
+			pragma: 'no-cache',
+			'sec-ch-ua': '"Not;A=Brand";v="8", "Chromium";v="150", "Microsoft Edge";v="150"',
+			'sec-ch-ua-mobile': '?0',
+			'sec-ch-ua-platform': '"Windows"',
+			'sec-ch-viewport-height': '967',
+			'sec-ch-viewport-width': '958',
+			'sec-fetch-dest': 'document',
+			'sec-fetch-mode': 'navigate',
+			'sec-fetch-site': 'same-origin',
+			'sec-fetch-user': '?1',
+			'upgrade-insecure-requests': '1'
+		}
 	};
 
 	if (req.method == 'GET') {
